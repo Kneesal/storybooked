@@ -1,10 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-const BackHome = () => {
+interface BackHomeProps {
+  label: string;
+}
+
+const BackHome = ({ label }: BackHomeProps) => {
   return (
     <h2 className="text-center">
-      <Link href="/">Back to home</Link>
+      <Link href="/">{label}</Link>
     </h2>
   );
 };

@@ -12,6 +12,11 @@ type Story = StoryObj<typeof BackHome>;
 export const Primary: Story = {
   args: {
     label: "Back to home",
-    primary: true,
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    label: "Go Back",
   },
 };

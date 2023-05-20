@@ -9,7 +9,7 @@ const FirstPost = () => {
         <title>First Post</title>
       </Head>
       <h1 className="text-2xl font-bold text-center"> First Post </h1>
-      <BackHome />
+      <BackHome label={"Back Home"} />
     </div>
   );
 };
