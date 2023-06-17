@@ -7,7 +7,7 @@ interface BackHomeProps {
 
 const BackHome = ({ label }: BackHomeProps) => {
   return (
-    <h2 className="text-center">
+    <h2>
       <Link href="/">{label}</Link>
     </h2>
   );
