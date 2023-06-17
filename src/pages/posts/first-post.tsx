@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BackHome from "@/components/BackHome/BackHome";
 import Head from "next/head";
 
 const FirstPost = () => {
+  useEffect(() => {
+    console.log("this will fetch all the post data");
+  }, []);
   return (
     <div>
       <Head>
