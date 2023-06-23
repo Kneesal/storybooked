@@ -12,7 +12,7 @@ interface LayoutProps {
 }
 
 const name = "Nisal Cottingham";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "My Blog Site";
 
 export function Layout({ children, home }: LayoutProps) {
   return (
@@ -43,6 +43,7 @@ export function Layout({ children, home }: LayoutProps) {
               width={144}
               alt=""
             />
+
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
           </>
         ) : (
@@ -55,6 +56,7 @@ export function Layout({ children, home }: LayoutProps) {
                 height={108}
                 width={108}
                 alt=""
+                style={{ borderRadius: "100%" }}
               />
             </Link>
             <h2 className={utilStyles.headingLg}>
