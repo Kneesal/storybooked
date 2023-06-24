@@ -3,5 +3,8 @@
     "next/babel",
     "next/core-web-vitals",
     "plugin:storybook/recommended"
-  ]
+  ],
+  "rules": {
+    "quotes": [2, "single", { "avoidEscape": true }]
+  }
 }

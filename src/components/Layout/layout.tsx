@@ -41,7 +41,8 @@ export function Layout({ children, home }: LayoutProps) {
               className={utilStyles.borderCircle}
               height={144}
               width={144}
-              alt=""
+              alt="user-profile-pic"
+              style={{ borderRadius: "9999px" }}
             />
 
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -51,12 +52,11 @@ export function Layout({ children, home }: LayoutProps) {
             <Link href="/">
               <Image
                 priority
-                src="/images/profile.jpg"
+                src="/images/profilepic.jpeg"
                 className={utilStyles.borderCircle}
                 height={108}
                 width={108}
-                alt=""
-                style={{ borderRadius: "100%" }}
+                alt="user-profile-pic"
               />
             </Link>
             <h2 className={utilStyles.headingLg}>
