@@ -8,13 +8,13 @@ import BackHome from "../BackHome/BackHome";
 
 interface LayoutProps {
   children: ReactNode;
-  home: boolean;
+  home?: boolean;
 }
 
 const name = "Nisal Cottingham";
 export const siteTitle = "My Blog Site";
 
-export function Layout({ children, home }: LayoutProps) {
+export function Layout({ children, home = false }: LayoutProps) {
   return (
     <div className={styles.container}>
       <Head>
