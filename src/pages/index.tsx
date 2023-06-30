@@ -2,7 +2,6 @@ import Head from "next/head";
 import { siteTitle, Layout } from "../components/Layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import postcss from "postcss";
 import { InferGetStaticPropsType } from "next";
 
 export async function getStaticProps() {
