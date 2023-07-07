@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { title } from "process";
+import { remark } from "remark";
+import html from "remark-html";
 
 interface AllPosts {
   id: string;
@@ -37,6 +38,19 @@ export const getSortedPostsData = (): AllPosts[] => {
 };
 
 export const getAllPostsId = () => {
+  // Returns an array that looks like this for getStaticProps:
+  // [
+  //   {
+  //     params: {
+  //       id: 'ssg-ssr'
+  //     }
+  //   },
+  //   {
+  //     params: {
+  //       id: 'pre-rendering'
+  //     }
+  //   }
+  // ]
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {
@@ -47,16 +61,22 @@ export const getAllPostsId = () => {
   });
 };
 
-export function getPostData(id: string) {
+export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+
+  const contentHtml = processedContent.toString();
 
   // Combine the data with the id
   return {
     id,
+    contentHtml,
     ...matterResult.data,
   };
 }
